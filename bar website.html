@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    ::-webkit-scrollbar{
+        background-color: transparent;
+        width:1px;
+    }
+    body, html{
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+        height:100%;
+        width:100%;
+        scroll-behavior: smooth;
+        background-color: black;
+    }
+    .hero-section{
+        background-image: url("images/restaurant5.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .nav-items a::after{
+        content:"";
+        position:absolute;
+        bottom:-5px;
+        left:0;
+        width:100%;
+        height: 2px;
+        transition: .3s linear;
+        background-color: white;
+        opacity:0;
+    }
+    .nav-items a:hover{
+        color:rgb(185, 185, 185);
+    }
+    @media (min-width:768px){
+
+        .nav-items a:hover::after{
+            opacity: 1;
+        }
+        .nav-items li.active a::after{
+            opacity: 1;
+        }
+    }
+    .parallax{
+        background-image: url("images/restaurant3.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        height:500px;
+    }
+ 
+ 
+    input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: rgb(255, 255, 255);
+}
+
+
+</style>
+<body>
+    <section class="hero-section block h-screen z-20">
+        <!-- <img src="images/restaurant5.jpg" alt="" class="h-screen w-screen object-cover fixed -z-10"> -->
+
+     <div class="main-container overflow-hidden  relative bg-black lg:bg-transparent duration-200 ease-linear px-5 lg:px-9 z-10">
+           <!-- navbar start  -->
+           <nav class="navbar py-8 flex justify-between items-center">
+
+            <div class="hamburger cursor-pointer lg:hidden">
+                <i class="fa-sharp fa-solid fa-bars text-white"></i>
+            </div>
+
+            <div class="nav-items absolute top-24 lg:relative lg:inset-0 lg:order-2 lg:ml-36 font-serif">
+                <ul id="nav-item" class="flex flex-col space-y-3 lg:flex-row lg:space-y-0 lg:space-x-10">
+                    <li class="text-white  tracking-widest text-[16px] cursor-pointer relative active"><a href="bar website.html">Home</a> </li>
+                    <li class="text-white tracking-widest text-[16px] cursor-pointer relative"><a href="bar website about.html">About</a> </li>
+                    <li class="text-white tracking-widest text-[16px] cursor-pointer relative"> <a href="bar website menu.html">Menu</a></li>
+                    <li class="text-white tracking-widest text-[16px] cursor-pointer relative"><a href="bar website reservation.html">Reservations</a> </li>
+                    <li class="text-white tracking-widest text-[16px] cursor-pointer relative"><a href="bar website contact.html">Contact</a> </li>
+                </ul>
+            </div>
+
+            <!-- logo start  -->
+            <div class="logo-wrapper">
+                <img src="images/logo bridge.png" alt="" class="lg:order-1">
+            </div>
+           <!-- logo end  -->
+           <!-- book a table start  -->
+            <div class="hidden book-a-table lg:flex lg:order-3 items-center space-x-6">
+                <div class="icons text-white text-[20px] flex space-x-4">
+                    <a href="https://www.facebook.com/parsant.bartaula/"><i class="fa-brands fa-facebook hover:text-gray-400 cursor-pointer"></i></a>
+                    <a href="https://www.instagram.com/parsantbartaula/"><i class="fa-brands fa-instagram hover:text-gray-400 cursor-pointer"></i></a>
+                    <a href="https://twitter.com/monkey11428"><i class="fa-brands fa-twitter hover:text-gray-400 cursor-pointer"></i></a>
+                </div>
+                <button class="py-3 px-9 text-white border-white border-[1.5px] bg-transparent hover:bg-white hover:text-gray-400 duration-300 transition-all tracking-widest"><a href="bar website reservation.html">Book a table</a></button>
+            </div>
+           <!-- book a table end  -->
+
+           <!-- center parna  -->
+           <div class="center parna lg:hidden">
+            hello
+           </div>
+           <!-- center parna end  -->
+        </nav>
+        <!-- navbar end  -->
+     </div>
+
+        <!-- hero section ko content   -->
+        <div class="py-4 w-screen absolute top-1/2 -translate-y-1/2 flex flex-col justify-evenly items-center space-y-8">
+           <p class="text-white font-mono text-center text-[16px] md:text-xl lg:text-2xl">Exclusive drink service</p>
+           <h1 class="text-4xl md:text-6xl text-white text-center font-serif lg:text-7xl">Cocktail stage evenings</h1>
+            <span class=" border-[1.5px] border-white text-white px-4 py-3"><a href="bar website menu.html">View more</a> </span>
+        </div>
+        <!-- hero section ko content end  -->
+    </section>
+
+
+    <section class="reservation-section bg-black py-16 px-4">
+        <!-- reservation buttons start  -->
+        <div class="flex flex-col flex-wrap space-y-4 sm:space-y-0 justify-between sm:flex-row">
+            <div class="bg-transparent flex space-x-3 p-4 border-[.5px] border-white w-full sm:w-[45%] items-center sm:mb-4 border-opacity-50" >
+                <span class="text-white text-base"><i class="fa-solid fa-user-plus"></i></span>
+                 <select  class="bg-transparent w-[100%] text-white font-thin border-black outline-black focus:outline-none fo">
+                    <option class="text- bg-black">1 People </option>
+                    <option class=" bg-black">2 People </option>
+                    <option class=" bg-black">3 People </option>
+                    <option class=" bg-black">4 People </option>
+                    <option class=" bg-black">5 People </option>
+                 </select>
+                
+            </div>
+
+                <div class="bg-transparent flex items-center space-x-3 p-4 border-[.5px] border-white w-full sm:w-[45%] sm:mb-4 sm:h-[57.33px] border-opacity-50">
+                    <span class="text-white text-base">
+                        <i class="fa-solid fa-calendar"></i>
+                </span>
+                 <input type="date" class="bg-black text-white w-[100%] outline-none border-none "/>
+                    
+                </div>
+       
+ 
+                <div class="bg-transparent flex  space-x-3 p-4 border-[.5px] border-white items-center w-full sm:w-[45%] sm:mb-4 border-opacity-50">
+                    <span class="text-white text-xl"><i class="fa-sharp fa-solid fa-clock"></i>
+                    </span>
+
+                    <select  class="bg-transparent w-[100%] text-white font-thin border-black outline-black focus:outline-none fo">
+                        <option class="text- bg-black">12:00PM </option>
+                        <option class=" bg-black">1:00PM </option>
+                        <option class=" bg-black">2:00PM  </option>
+                        <option class=" bg-black">3:00PM   </option>
+                        <option class=" bg-black">5:00PM   </option>
+                        <option class=" bg-black">6:00PM   </option>
+                        <option class=" bg-black">7:00PM   </option>
+                        <option class=" bg-black">8:00PM   </option>
+                        <option class=" bg-black">9:00PM   </option>
+                        <option class=" bg-black">10:00PM   </option>
+                        <option class=" bg-black">11:00PM   </option>
+                        <option class=" bg-black">12:00AM   </option>
+                     </select>
+                    
+            
+            </div>
+
+            <button class=" py-3 px-9 text-white border-white border-[1.5px] bg-transparent hover:bg-white hover:text-gray-400 duration-300 transition-all tracking-widest w-full sm:w-[45%] sm:mb-4 border-opacity-50"><a href="bar website reservation.html">Book a table</a></button>
+        </div>
+        <!-- reservation buttons end  -->
+    </section>
+
+    <section class="visit-a-bar  bg-black py-28 px-4 lg:px-10">
+        <main class=" flex flex-col space-y-16 lg:flex-row lg:space-y-0 lg:justify-between">
+            <!-- visit a bar section start -->
+            <div class="flex flex-col space-y-5 text-white">
+                <h2 class="text-[21px] text-center font-mono">visit a bar</h2>
+                <h1 class="text-[50px] text-center font-serif tracking-wider -translate-y-4">Open Hours</h1>
+                <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                    <p>Monday - Friday:</p>
+                    <p>4:00pm - 1:00am</p>
+                </h3>
+                <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                    <p>Saturday:</p>
+                    <p>4:00pm - 3:00am</p>
+                </h3>
+                <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                    <p>Sunday:</p>
+                    <p>4:00pm - 2:00am</p>
+                </h3>
+
+                <h3 class="relative top-8 text-center text-[17px] font-serif">visit us</h3>
+            </div>
+            <!-- visit a bar section end  -->
+
+         <!-- visit image part  -->
+         <div class="md:px-20 lg:px-0 relative">
+            <img src="images/restaurant1.jpg" alt="" class="lg:w-64 lg:h-80">
+         </div>
+         <!-- visit image end  -->
+
+         <!-- best offer part  -->
+         <div class="flex flex-col space-y-5 text-white">
+            <h2 class="text-[21px] text-center font-mono">The best offer</h2>
+            <h1 class="text-[50px] text-center font-serif tracking-wider -translate-y-4">Happy hour</h1>
+            <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                <p>Monday - Friday:</p>
+                <p>4:00pm - 7:00pm</p>
+            </h3>
+            <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                <p>20% off all wine by glass</p>
+                <p>15% of all cocktails</p>
+            </h3>
+            <h3 class="text-white font-serif text-center text-[15px] tracking-wider font-extralight flex-col space-y-2">
+                <p>25% off selected craft beer </p>
+                <p>10% off all spirits</p>
+            </h3>
+
+            <h3 class="relative top-8 text-center text-[17px] font-serif"><a href="bar website about.html">View more</a></h3>
+        </div>
+<!-- best offer end  -->
+
+        </main>
+    </section>
+
+    <!-- parallax start  -->
+    <div class="parallax"></div>
+    <!-- parallax end  -->
+
+
+    <section class="recommended-section overflow-hidden text-white bg-black pt-36 pb-20 px-3">
+        <h2 class="font-mono text-center text-[21px]">This week's special</h2>
+        <h1 class="font-serif text-[45px] text-center tracking-widest">We recommended</h1>
+        <p class="text-center text-[14px] my-2 font-serif md:px-24 lg:px-36">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minima ullam iure eaque, odit excepturi eum necessitatibus ut.</p>
+    </section>
+
+    <section>
+        <!-- dishes part start  -->
+        <main class="flex flex-col space-y-8 px-4 lg:block lg:columns-2">
+            <!-- dishes  start-->
+         <div class="dishes-wrapper flex flex-col space-y-7 py-20 md:px-14 lg:pl-8 lg:pr-6 lg:w-full">
+
+
+            <div class="flex flex-col text-white space-y-2">
+                <div class="dish-name flex items-center justify-between text-[25px]">
+                    <span class="tracking-wider">Coco spine</span>
+                    <div class="hidden sm:block border-dotted border-b-2 border-[#828383] basis-2/3 h-4 border-opacity-60"></div>
+                    <span>$19</span>
+                </div>
+                <h2 class="text-[15px]">
+Captain Morgan spiced rum, pineapple </h2>
+            </div>
+
+            <div class="flex flex-col text-white space-y-2">
+                <div class="dish-name flex items-center justify-between text-[25px]">
+                    <span class="tracking-wider">Tequila Sunrise</span>
+                    <div class="hidden sm:block border-dotted border-b-2 border-[#828383] basis-2/3 h-4 border-opacity-60"></div>
+                    <span>$14</span>
+                </div>
+                <h2 class="text-[15px]">Tequila, orange juice, grenadine
+ </h2>
+            </div>
+
+            <div class="flex flex-col text-white space-y-2">
+                <div class="dish-name flex items-center justify-between text-[25px]">
+                    <span class="tracking-wider">Cuba Libre</span>
+                    <div class="hidden sm:block border-dotted border-b-2 border-[#828383] basis-2/3 h-4 border-opacity-60"></div>
+                    <span>$22</span>
+                </div>
+                <h2 class="text-[15px]">
+Dark rum, fresh lime, coke </h2>
+            </div>
+
+            <div class="flex flex-col text-white space-y-2">
+                <div class="dish-name flex items-center justify-between text-[25px]">
+                    <span class="tracking-wider">Gin Fizz</span>
+                    <div class="hidden sm:block border-dotted border-b-2 border-[#828383] basis-2/3 h-4 border-opacity-60"></div>
+                    <span>$24</span>
+                </div>
+                <h2 class="text-[15px]">
+Bombay sapphire gin, Ginger beer, lime juice </h2>
+            </div>
+
+            <button class="text-white px-4 py-2 relative top-8 border-[1px] border-opacity-40 border-white w-44 left-1/2 -translate-x-1/2"><a href="bar website menu.html">View more</a></button>
+
+         </div>
+            <!-- dishes end  -->
+
+            <!-- dishes image part  -->
+            <div class="md:px-14 lg:px-0 lg:w-full">
+                <img src="images/restaurant4.jpg" alt="" class="max-h-[600px] w-full object-cover lg:w-full">
+            </div>
+            <!-- dishes image end -->
+        </main>
+        <!-- dishes part end  -->
+    </section>
+
+
+    <section class="multiple-images bg-black px-4 md:px-16 lg:px-4 py-20">
+        <div class="lg:columns-3">
+            <img src="images/restaurant9.jpg" alt="" class="h-full w-full object-cover">
+            <img src="images/restaurat7.jpg" alt="" class="h-full w-full object-cover">
+            <img src="images/restaurant10.jpg" alt="" class="h-full w-full object-cover">
+        </div>
+    </section>
+
+
+
+    <footer class="bg-black py-20 px-10">
+        <main class="lg:columns-2  space-y-20 text-white">
+            <div class="bridge flex flex-col space-y-9 md:w-full">
+                <div><img src="images/logo bridge.png" alt=""></div>
+                <p class="text-[14px] md:pr-20">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium nulla ducimus porro adipisci .</p>
+                <div class="logo-and-time flex flex-col space-y-5 text-[14px] tracking-wider">
+                    <div class="flex space-x-5 items-center">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Mon-Sun: 09am-09pm</span>
+                    </div>
+                    <div class="flex space-x-5 items-center">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Bhandara-5, Chitwan</span>
+                    </div>
+                    <div class="flex space-x-5 items-center">
+                        <i class="fa-regular fa-map"></i>
+                        <span>301-242-34001, 2301-342-2345</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Pages flex flex-col space-y-9 md:w-full">
+                <h1 class="text-3xl
+                ">Pages</h1>
+             
+                <div class="navigation flex flex-col space-y-6 text-[14px] tracking-wider font-extralight">
+                   <a href="bar website about.html">About</a>
+                   <a href="bar website reservation.html">Reservations</a>
+                   <a href="bar website menu.html">Menu</a>
+                   <a href="bar website contact.html">Contact</a>
+                </div>
+
+            </div>
+
+        </main>
+    </footer>
+
+    <script>
+        const navItem=document.getElementById("nav-item")
+        const hamburger=document.querySelector(".hamburger")
+        const navbarContainer=document.querySelector(".main-container")
+        hamburger.addEventListener("click", function(){
+        if(navbarContainer.style.height==="98.67px" || navbarContainer.style.height==="82px"){
+            navbarContainer.style.height="278px";
+        }else{
+            navbarContainer.style.height="98.67px";
+        }
+        })
+
+    </script>
+</body>
+</html>
